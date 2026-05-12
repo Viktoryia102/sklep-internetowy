@@ -1,37 +1,27 @@
 package gra;
 
-public class M4A1S extends Weapon implements IFireable, IModeSwitchable {
-    private boolean silencerOn = true;
+import java.util.ArrayList;
+import java.util.List;
 
-    public M4A1S() {
-        super("M4A1S", 2900, 20);
-    }
+public class Main {
+    public static void main(String[] args) {
+        List<Weapon> myLoadout = new ArrayList<>();
+        myLoadout.add(new Glock18());
+        myLoadout.add(new AWP());
 
-    @Override
-    public void displayStats() {
-        System.out.println("--- " + name + " ---");
-        System.out.println("Cena: " + price + "$");
-        System.out.println("Amunicja: " + currentAmmo + "/" + clipSize);
-    }
+        for (Weapon w : myLoadout) {
+            w.displayStats();
 
-    @Override
-    public void shoot() {
-        if (currentAmmo > 0) {
-            currentAmmo--;
-            System.out.println(name + ": Strzał!");
-        } else {
-            System.out.println(name + ": Click! (Brak amunicji)");
+            for (int i = 0; i < 5; i++) {
+                if (w instanceof IZoomable zoomable) {
+                    zoomable.toggleScope();
+                }
+
+                if (w instanceof IFireable fireable) {
+                    fireable.shoot();
+                }
+            }
+            System.out.println();
         }
-    }
-
-    @Override
-    public void reload() {
-        refillAmmo();
-    }
-
-    @Override
-    public void switchMode() {
-        silencerOn = !silencerOn;
-        System.out.println(name + ": Tłumik " + (silencerOn ? "założony" : "zdjęty"));
     }
 }
