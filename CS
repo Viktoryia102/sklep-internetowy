@@ -1,0 +1,22 @@
+package gra;
+
+public abstract class Weapon {
+    public String name;
+    public int price;
+    public int clipSize;
+    public int currentAmmo;
+
+    public Weapon(String name, int price, int clipSize) {
+        this.name = name;
+        this.price = price;
+        this.clipSize = clipSize;
+        this.currentAmmo = clipSize;
+    }
+
+    public abstract void displayStats();
+
+    public void refillAmmo() {
+        currentAmmo = clipSize;
+        System.out.println(name + ": Przeładowano!");
+    }
+}
