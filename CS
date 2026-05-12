@@ -1,10 +1,10 @@
 package gra;
 
-public class Glock18 extends Weapon implements IFireable, IModeSwitchable {
-    private boolean burstMode = false;
+public class AWP extends Weapon implements IFireable, IZoomable {
+    private boolean isZoomed = false;
 
-    public Glock18() {
-        super("Glock18", 200, 20);
+    public AWP() {
+        super("AWP", 4750, 10);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class Glock18 extends Weapon implements IFireable, IModeSwitchable {
     }
 
     @Override
-    public void switchMode() {
-        burstMode = !burstMode;
-        System.out.println(name + ": Zmiana trybu ognia");
+    public void toggleScope() {
+        isZoomed = !isZoomed;
+        System.out.println(name + ": Luneta " + (isZoomed ? "włączona" : "wyłączona"));
     }
 }
