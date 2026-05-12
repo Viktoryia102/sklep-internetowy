@@ -1,10 +1,10 @@
 package gra;
 
-public class AWP extends Weapon implements IFireable, IZoomable {
-    private boolean isZoomed = false;
+public class M4A1S extends Weapon implements IFireable, IModeSwitchable {
+    private boolean silencerOn = true;
 
-    public AWP() {
-        super("AWP", 4750, 10);
+    public M4A1S() {
+        super("M4A1S", 2900, 20);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class AWP extends Weapon implements IFireable, IZoomable {
     }
 
     @Override
-    public void toggleScope() {
-        isZoomed = !isZoomed;
-        System.out.println(name + ": Luneta " + (isZoomed ? "włączona" : "wyłączona"));
+    public void switchMode() {
+        silencerOn = !silencerOn;
+        System.out.println(name + ": Tłumik " + (silencerOn ? "założony" : "zdjęty"));
     }
 }
