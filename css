@@ -1,0 +1,59 @@
+/* styl10.css */
+
+body{
+    font-family: Helvetica;
+    margin: 0;
+}
+
+#lewyGorny,
+#prawyGorny{
+    background-color: rgb(146,184,112);
+    text-align: center;
+    width: 50%;
+    height: 170px;
+    float: left;
+}
+
+#baner,
+#stopka{
+    background-color: rgb(100,61,49);
+    color: white;
+    text-align: center;
+    height: 80px;
+    padding: 5px;
+    clear: both;
+}
+
+#lewy,
+#prawy{
+    background-color: rgb(146,184,112);
+    width: 50%;
+    height: 450px;
+    float: left;
+}
+
+#zamow{
+    background-image: url("cukierki1.jpg");
+    padding-right: 30px;
+    padding-bottom: 120px;
+    font-size: 150%;
+    text-decoration: none;
+    color: black;
+}
+
+table,
+td{
+    border: 2px dashed green;
+    margin: 30px;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+h1{
+    letter-spacing: 20px;
+    font-size: 250%;
+}
+
+img{
+    max-width: 100%;
+}
